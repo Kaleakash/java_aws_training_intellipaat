@@ -8,6 +8,7 @@ public class DemoTest {
 		
 		//mgr.displayEmployee();
 		mgr.disMgr();
+		//Employee emp = new Employee();
 	}
 
 }
