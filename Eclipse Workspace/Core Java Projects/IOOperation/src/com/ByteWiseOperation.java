@@ -27,16 +27,18 @@ public class ByteWiseOperation {
 //		fos.close();
 		
 		// source : file and destination : file
-		FileInputStream fis = new FileInputStream("C:\\Users\\LENOVO\\OneDrive\\Desktop\\Maven Plugins.txt");
-		FileOutputStream fos = new FileOutputStream("info.txt",true);		// append the data  
-		int ch;
-		while((ch = fis.read())!= -1) {		// EOF in java -1
-			System.out.print((char)ch);	// we need to convert 
-			fos.write(ch);			// auto convert 
-		}
-		fis.close();		
-		fos.close();
-		System.out.println("copied");
+//		FileInputStream fis = new FileInputStream("C:\\Users\\LENOVO\\OneDrive\\Desktop\\Maven Plugins.txt");
+//		FileOutputStream fos = new FileOutputStream("info.txt",true);		// append the data  
+//		int ch;
+//		while((ch = fis.read())!= -1) {		// EOF in java -1
+//			System.out.print((char)ch);	// we need to convert 
+//			fos.write(ch);			// auto convert 
+//		}
+//		fis.close();		
+//		fos.close();
+//		System.out.println("copied");
+		
+		
 	}
 
 }
