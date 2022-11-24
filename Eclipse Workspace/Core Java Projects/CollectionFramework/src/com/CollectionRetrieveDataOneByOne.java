@@ -10,7 +10,6 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
-
 public class CollectionRetrieveDataOneByOne {
 
 	public static void main(String[] args) {
