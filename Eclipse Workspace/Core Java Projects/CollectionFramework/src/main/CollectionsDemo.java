@@ -23,7 +23,7 @@ public class CollectionsDemo {
 		System.out.print(name+" ");
 	}
 	System.out.println();
-	Collections.sort(names);
+		Collections.sort(names);
 	System.out.println("After sort Asc");
 	for(String name:names) {
 		System.out.print(name+" ");
