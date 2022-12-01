@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app>
+<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
   <display-name>SimpleServletApp</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -9,7 +9,6 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <description></description>
     <display-name>Demo</display-name>
@@ -20,5 +19,14 @@
     <servlet-name>Demo</servlet-name>
     <url-pattern>/Hi</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
 </web-app>
