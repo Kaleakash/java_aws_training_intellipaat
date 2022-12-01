@@ -29,7 +29,7 @@ public class Home extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter pw = response.getWriter();
-		pw.println("Welcome to Home page using get method");
+		pw.println("<b>Welcome to Home page using get method</b>");
 	}
 
 	/**
