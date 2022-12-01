@@ -33,6 +33,14 @@ public class Login extends HttpServlet {
 		RequestDispatcher rd1 = request.getRequestDispatcher("Home");
 		RequestDispatcher rd2 = request.getRequestDispatcher("login.html");
 		response.setContentType("text/html");
+		/*
+		 * 	JDBC Code 
+		 * load the Driver 
+		 * Establisht the connection 
+		 * PreparedStatement 
+		 * ResultSet 					select * from login where emaildid=? and password = ?
+		 * 
+		 */
 		if(emailid.equals("raj@gmail.com") && password.equals("123")) {
 				pw.println("successfully login with Get method");
 			rd1.forward(request, response);			// we can see the output of only target page 
@@ -47,6 +55,15 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 		RequestDispatcher rd1 = request.getRequestDispatcher("Home");
 		RequestDispatcher rd2 = request.getRequestDispatcher("login.html");
+		
+		/*
+		 * 	JDBC Code 
+		 * load the Driver 
+		 * Establisht the connection 
+		 * PreparedStatement 
+		 * insert into login values(?,?)
+		 * 
+		 */
 		response.setContentType("text/html");
 		if(emailid.equals("raj@gmail.com") && password.equals("123")) {
 			pw.println("successfully login with post method");
