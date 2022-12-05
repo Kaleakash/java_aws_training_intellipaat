@@ -18,8 +18,17 @@ public class DemoTest {
 //	emp.display();
 		
 	ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
-	Employee emp = (Employee)ac.getBean("emp1");
-	emp.display();
+	Employee e1 = (Employee)ac.getBean("emp1");
+	e1.display();
+	
+	Employee e2 = (Employee)ac.getBean("emp1");
+	e2.display();
+	
+	Employee e3 = (Employee)ac.getBean("emp2");
+	e3.display();
+	
+	Employee e4 = (Employee)ac.getBean("emp2");
+	e4.display();
 	}
 
 }
