@@ -48,12 +48,12 @@ public class EmployeeController extends HttpServlet {
 		String name = request.getParameter("name");
 		float salary = Float.parseFloat(request.getParameter("salary"));
 		
-		Employee emp = new Employee();
+			Employee emp = new Employee();
 		emp.setId(id);
 		emp.setName(name);
 		emp.setSalary(salary);
 		
-		EmployeeService es = new EmployeeService();
+			EmployeeService es = new EmployeeService();
 		String result = es.storeEmployee(emp);
 		pw.println(result);
 		
