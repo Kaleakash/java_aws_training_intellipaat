@@ -7,4 +7,19 @@
 
 <bean class="com.Employee" id="emp2" scope="prototype"></bean>
 
+<bean class="com.Employee" id="emp3">
+
+<constructor-arg value="100"></constructor-arg>
+<constructor-arg value="Ravi"></constructor-arg>
+<constructor-arg value="12000"></constructor-arg>
+
+</bean>
+
+<bean class="com.Employee" id="emp4">
+	<property name="id" value="101"></property>
+	
+	<property name="salary" value="18000"></property>
+	<property name="name" value="Mahesh"></property>
+</bean>
+
 </beans>
