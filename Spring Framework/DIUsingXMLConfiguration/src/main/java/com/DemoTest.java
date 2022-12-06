@@ -30,14 +30,20 @@ public class DemoTest {
 //	Employee e4 = (Employee)ac.getBean("emp2");
 //	e4.display();
 	
-	Employee emp1 = (Employee)ac.getBean("emp1");
-	System.err.println(emp1);
-	Employee emp2 = (Employee)ac.getBean("emp2");
-	System.err.println(emp2);
-	Employee emp3 = (Employee)ac.getBean("emp3");
-	System.err.println(emp3);
-	Employee emp4 = (Employee)ac.getBean("emp4");
-	System.err.println(emp4);
+//	Employee emp1 = (Employee)ac.getBean("emp1");
+//	System.err.println(emp1);
+//	Employee emp2 = (Employee)ac.getBean("emp2");
+//	System.err.println(emp2);
+//	Employee emp3 = (Employee)ac.getBean("emp3");
+//	System.err.println(emp3);
+//	Employee emp4 = (Employee)ac.getBean("emp4");
+//	System.err.println(emp4);
+//	
+//	Address add1 = (Address)ac.getBean("add1");
+//	System.out.println(add1);
+	
+	Employee employee1 = (Employee)ac.getBean("employee1");
+	System.out.println(employee1);
 	}
 
 }
