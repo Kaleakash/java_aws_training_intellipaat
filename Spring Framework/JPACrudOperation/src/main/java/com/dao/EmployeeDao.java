@@ -81,7 +81,7 @@ public class EmployeeDao {
 	public List<Employee> findAllEmployeeBySalary() {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPACrudOperation");		// it is like a Connection in jdbc 
 		EntityManager manager = emf.createEntityManager();		// Statement or PreparedStatement
-		Query qry= manager.createQuery("select emp from Employee emp where emp.salary > 12000");
+		Query qry= manager.createQuery("select emp from Employee emp where emp.salary > 20000");
 		List<Employee> listOfEmp = qry.getResultList();
 		return listOfEmp;
 	}
