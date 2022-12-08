@@ -47,12 +47,33 @@ public class DemoTest {
 //	}
 	
 	// Retrieve student records 
-		Query qry = manager.createQuery("select s from Student s");
-		List<Student> ll = qry.getResultList();
-		Iterator<Student> li = ll.iterator();
+//		Query qry = manager.createQuery("select s from Student s");
+//		List<Student> ll = qry.getResultList();
+//		Iterator<Student> li = ll.iterator();
+//		while(li.hasNext()) {
+//			Student s = li.next();
+//			System.out.println(s);
+//		}
+//		// Join using JPQL 
+//	//Query qry = manager.createQuery("select t.tech, s.sname from Trainer t join Student s on t.tid=s.tsid"); // inner join
+//	Query qry = manager.createQuery("select t.name, t.tech, s.sname from Trainer t, Student s where t.tid=s.tsid");  // equi join 
+//	List<Object[]> ll = qry.getResultList();
+//	Iterator<Object[]> li = ll.iterator();
+//	while(li.hasNext()) {
+//		Object  obj[] = li.next();
+//		//System.out.println(obj[0]+" "+obj[1]);
+//		System.out.println("Trainer name is "+obj[0]+" Tech "+obj[1]+" Student name is "+obj[2]);
+//	}
+	
+	// Join using sql
+		//Query qry = manager.createQuery("select t.tech, s.sname from Trainer t join Student s on t.tid=s.tsid"); // inner join
+		Query qry = manager.createNativeQuery("select * from trainer t, student s where t.tid=s.tsid");  // equi join 
+		List<Object[]> ll = qry.getResultList();
+		Iterator<Object[]> li = ll.iterator();
 		while(li.hasNext()) {
-			Student s = li.next();
-			System.out.println(s);
+			Object  obj[] = li.next();
+			System.out.println(obj[0]+" "+obj[1]+" "+obj[2]+" "+obj[3]+" "+obj[4]+" "+obj[5]+" "+obj[6]);
+			//System.out.println("Trainer name is "+obj[0]+" Tech "+obj[1]+" Student name is "+obj[2]);
 		}
 	}
 
