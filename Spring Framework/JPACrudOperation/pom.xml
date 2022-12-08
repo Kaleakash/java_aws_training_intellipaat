@@ -21,11 +21,7 @@
        <artifactId>hibernate-entitymanager</artifactId>
        <version>4.2.8.Final</version>
      </dependency>
-     <dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.16</version>
-</dependency>
+  
 
 </dependencies>
 </project>
