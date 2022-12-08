@@ -46,8 +46,7 @@ public class DemoTest {
 //			Employee e = li.next();
 //			System.out.println(e);
 //		}
-		
-		// with condition with dyanmic value 
+		// with condition with dynamic value 
 		
 				List<Employee> listOfEmp = es.findEmployeeBySalary(25000);
 				Iterator<Employee> li = listOfEmp.iterator();
