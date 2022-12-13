@@ -69,14 +69,12 @@ public class EmployeeController {
 					return "failure using query param";
 				}
 		}
-		
 	// http://localhost:8080/singlePath/Ravi
 		@RequestMapping(value = "singlePath/{name}",method = RequestMethod.GET)
 		public String singlePathParam(@PathVariable("name") String uname) {
 			// we pass this value to service to dao layer. 
 			return "Welcome to spring boot with single path param "+uname;
 	}
-	
 		// http://localhost:8080/multiPath/Ravi/123
 		// http://localhost:8080/multiPath/Ravi/123456
 				@RequestMapping(value = "multiPath/{name}/{pass}",method = RequestMethod.GET)
