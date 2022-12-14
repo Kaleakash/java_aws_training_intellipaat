@@ -59,10 +59,37 @@ public class EmployeeController {
 	
 	// http://localhost:8080/storeEmployeeInfo 		: they have to send the data in json format. 
 	
-	@RequestMapping(value = "storeEmployeeInfo",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "storeEmployeeInfo",method = RequestMethod.POST,
+			consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String storeEmployeeDetails(@RequestBody Employee emp) {   //@RequestBody : this annotation is use to extract the from the body part. 
+		//System.out.println(emp);     // it will all toString method
+		
+		return employeeService.storeEmployeeInfo(emp);
+	}
+	// http://localhost:8080/updateEmployeeSalary		
+	
+	@RequestMapping(value = "updateEmployeeSalary",method = RequestMethod.PATCH,
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String updateEmployeeSalary(@RequestBody Employee emp) {   //@RequestBody : this annotation is use to extract the from the body part. 
 		System.out.println(emp);     // it will all toString method
-		return "Employee data stored";
+		return employeeService.updateEmployeeSalary(emp);
+	}
+	
+	// http://localhost:8080/updateEmployeeInfo
+	
+	@RequestMapping(value = "updateEmployeeInfo",method = RequestMethod.PUT,
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String updateEmployeeInfo(@RequestBody Employee emp) {   //@RequestBody : this annotation is use to extract the from the body part. 
+		
+		return employeeService.updateEmployeeInfo(emp);
+	}
+	
+	// http://localhost:8080/deleteEmployeeInfo/1
+	// http://localhost:8080/deleteEmployeeInfo/2
+	
+	@RequestMapping(value = "deleteEmployeeInfo/{id}",method = RequestMethod.DELETE)
+	public String deleteEmployeeInfo(@PathVariable("id") int id) {   
+		return employeeService.deleteEmployeeInfo(id);
 	}
 	
 }

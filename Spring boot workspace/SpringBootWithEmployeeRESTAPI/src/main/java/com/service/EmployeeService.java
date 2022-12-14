@@ -43,4 +43,51 @@ public class EmployeeService {
 		}
 		
 	}
+	
+	public String storeEmployeeInfo(Employee emp) {
+		Optional<Employee> result	= employeeRepository.findById(emp.getId());
+		if(result.isPresent()) {
+			return "Employee id must be unique";
+		}else {
+			employeeRepository.save(emp);			// insert the record or persist
+			return "Employee record stored in database successfully";
+		}
+	}
+	
+
+	public String deleteEmployeeInfo(int id) {
+		Optional<Employee> result	= employeeRepository.findById(id);
+		if(result.isPresent()) {
+			Employee emp = result.get();
+			employeeRepository.delete(emp);					// delete query 
+			return "Employee record deleted sucessfully";
+		}else {
+			return "Employee record not present";
+		}
+	}
+	
+	public String updateEmployeeSalary(Employee emp) {
+		Optional<Employee> result	= employeeRepository.findById(emp.getId());
+		if(result.isPresent()) {
+			Employee e =result.get();
+			e.setSalary(emp.getSalary());
+			employeeRepository.saveAndFlush(e);
+			return "Employee salary updated";
+		}else {
+			return "Employee record not present";
+		}
+	}
+	
+	public String updateEmployeeInfo(Employee emp) {
+		Optional<Employee> result	= employeeRepository.findById(emp.getId());
+		if(result.isPresent()) {
+			Employee e =result.get();
+			e.setSalary(emp.getSalary());
+			e.setName(emp.getName());
+			employeeRepository.saveAndFlush(e);
+			return "Employee details updated";
+		}else {
+			return "Employee record not present";
+		}
+	}
 }
