@@ -24,6 +24,7 @@ public class Order {
 	@Column(name="orderdate")
 	private LocalDate orderDate;
 	private int pid;
+	
 	@OneToOne(cascade = CascadeType.ALL)					// while placing the order we need to provide address details. 
 	@JoinColumn(name = "oid",referencedColumnName = "aid")
 	private Address add;
