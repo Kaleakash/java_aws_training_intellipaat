@@ -45,9 +45,9 @@ public class ProductService {
 		Optional<Product> op = productRepository.findById(pr.getPid());
 		if(op.isPresent()) {
 			Product p = op.get();
-			p.setPrice(pr.getPrice());
-			p.setQuanity(pr.getQuanity());
-			p.setUrl(pr.getUrl());
+				p.setPrice(pr.getPrice());
+				p.setQuanity(pr.getQuanity());
+				p.setUrl(pr.getUrl());
 			productRepository.saveAndFlush(p);
 			return "Product details updated successfully";
 		}else {
