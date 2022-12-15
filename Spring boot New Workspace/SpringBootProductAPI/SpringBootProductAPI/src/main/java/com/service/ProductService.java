@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bean.Order;
 import com.bean.Product;
+import com.repository.OrderRepository;
 import com.repository.ProductRepository;
 
 @Service
@@ -14,6 +16,17 @@ public class ProductService {
 
 	@Autowired
 	ProductRepository productRepository;
+	
+	
+	public Product findProductById(int pid) {
+		Optional<Product> op = productRepository.findById(pid);
+		if(op.isPresent()) {
+			Product p  = op.get();
+			return p;
+		}else {
+			return null;
+		}
+	}
 	
 	public String storeProdcut(Product product) {
 	Optional<Product> op = productRepository.findById(product.getPid());
@@ -54,4 +67,27 @@ public class ProductService {
 			return "Product not exists";
 		}
 	}
+	
+	public int findProductQuantity(int pid) {
+		Optional<Product> op = productRepository.findById(pid);
+		if(op.isPresent()) {
+			Product p = op.get();
+				return p.getQuanity();
+		}else {
+			return -1;
+		}
+	}
+	
+	public String updateProductQuantity(int pid, int quanity) {
+		Optional<Product> op = productRepository.findById(pid);
+		if(op.isPresent()) {
+			Product p = op.get();
+			p.setQuanity(p.getQuanity()-quanity);
+			productRepository.saveAndFlush(p);
+			return "updated";
+		}else {
+			return "not update";
+		}
+	}
+	
 }
